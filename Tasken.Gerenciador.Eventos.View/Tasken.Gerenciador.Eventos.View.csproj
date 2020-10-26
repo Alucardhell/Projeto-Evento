@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{98DAC575-6346-47B3-A443-D1AD1B9355ED}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Tasken.Gerenciador.Eventos</RootNamespace>
+    <AssemblyName>Tasken.Gerenciador.Eventos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\EnumAcaoCrud.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEventoCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEventoCRUD.Designer.cs">
+      <DependentUpon>FrmEventoCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEvento.Designer.cs">
+      <DependentUpon>FrmEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInformacoesEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInformacoesEvento.Designer.cs">
+      <DependentUpon>FrmInformacoesEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLote.Designer.cs">
+      <DependentUpon>FrmLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLoteCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLoteCRUD.Designer.cs">
+      <DependentUpon>FrmLoteCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPalestrante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPalestrante.Designer.cs">
+      <DependentUpon>FrmPalestrante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPalestranteCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPalestranteCRUD.Designer.cs">
+      <DependentUpon>FrmPalestranteCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRedeSocialCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRedeSocialCRUD.Designer.cs">
+      <DependentUpon>FrmRedeSocialCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEventoCRUD.resx">
+      <DependentUpon>FrmEventoCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEvento.resx">
+      <DependentUpon>FrmEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInformacoesEvento.resx">
+      <DependentUpon>FrmInformacoesEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLote.resx">
+      <DependentUpon>FrmLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoteCRUD.resx">
+      <DependentUpon>FrmLoteCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPalestrante.resx">
+      <DependentUpon>FrmPalestrante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPalestranteCRUD.resx">
+      <DependentUpon>FrmPalestranteCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRedeSocialCRUD.resx">
+      <DependentUpon>FrmRedeSocialCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tasken.Gerenciador.Eventos.Controlador\Tasken.Gerenciador.Eventos.Controlador.csproj">
+      <Project>{e7996c8d-df88-47c5-bd5b-310882c480e2}</Project>
+      <Name>Tasken.Gerenciador.Eventos.Controlador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tasken.Gerenciador.Eventos.Modelos\Tasken.Gerenciador.Eventos.Modelos.csproj">
+      <Project>{44e3a14a-5c16-4353-8d22-3100319d300c}</Project>
+      <Name>Tasken.Gerenciador.Eventos.Modelos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

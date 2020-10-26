@@ -1,0 +1,6 @@
+C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Modelos\bin\Debug\Tasken.Gerenciador.Eventos.Modelos.dll
+C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Modelos\bin\Debug\Tasken.Gerenciador.Eventos.Modelos.pdb
+C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Modelos\obj\Debug\Tasken.Gerenciador.Eventos.Modelos.csproj.CoreCompileInputs.cache
+C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Modelos\obj\Debug\Tasken.Gerenciador.Eventos.Modelos.dll
+C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Modelos\obj\Debug\Tasken.Gerenciador.Eventos.Modelos.pdb
+C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Modelos\obj\Debug\Tasken.Gerenciador.Eventos.Modelos.csprojAssemblyReference.cache
