@@ -51,18 +51,6 @@ namespace Tasken.Gerenciador.Eventos
             this.Text = "Evento";
         }
 
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            FrmPalestrante formPalestrante = new FrmPalestrante();
-            formPalestrante.ShowDialog();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FrmLote formLote = new FrmLote();
-            formLote.ShowDialog();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             FabricaRepositorio fabricarEvento = new FabricaRepositorio(ConnectionSQL.connectionString);

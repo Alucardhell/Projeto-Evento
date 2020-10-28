@@ -67,12 +67,6 @@
     <Compile Include="FrmEventoCRUD.Designer.cs">
       <DependentUpon>FrmEventoCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEvento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmEvento.Designer.cs">
-      <DependentUpon>FrmEvento.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmInformacoesEvento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,23 +79,11 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLote.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmLote.Designer.cs">
-      <DependentUpon>FrmLote.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmLoteCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLoteCRUD.Designer.cs">
       <DependentUpon>FrmLoteCRUD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPalestrante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPalestrante.Designer.cs">
-      <DependentUpon>FrmPalestrante.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPalestranteCRUD.cs">
       <SubType>Form</SubType>
@@ -138,23 +120,14 @@
     <EmbeddedResource Include="FrmEventoCRUD.resx">
       <DependentUpon>FrmEventoCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEvento.resx">
-      <DependentUpon>FrmEvento.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmInformacoesEvento.resx">
       <DependentUpon>FrmInformacoesEvento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLote.resx">
-      <DependentUpon>FrmLote.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmLoteCRUD.resx">
       <DependentUpon>FrmLoteCRUD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPalestrante.resx">
-      <DependentUpon>FrmPalestrante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPalestranteCRUD.resx">
       <DependentUpon>FrmPalestranteCRUD.cs</DependentUpon>

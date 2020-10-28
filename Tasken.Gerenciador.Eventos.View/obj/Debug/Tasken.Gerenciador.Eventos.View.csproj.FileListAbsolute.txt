@@ -17,11 +17,8 @@ C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Ev
 C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.View\bin\Debug\Tasken.Gerenciador.Eventos.Modelos.pdb
 C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.View\obj\Debug\Tasken.Gerenciador.Eventos.View.csprojAssemblyReference.cache
 C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.View\obj\Debug\Tasken.Gerenciador.Eventos.FrmEventoCRUD.resources
-C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.View\obj\Debug\Tasken.Gerenciador.Eventos.FrmEvento.resources
 C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.View\obj\Debug\Tasken.Gerenciador.Eventos.FrmInformacoesEvento.resources
-C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.View\obj\Debug\Tasken.Gerenciador.Eventos.FrmLote.resources
 C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.View\obj\Debug\Tasken.Gerenciador.Eventos.FrmLoteCRUD.resources
-C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.View\obj\Debug\Tasken.Gerenciador.Eventos.FrmPalestrante.resources
 C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.View\obj\Debug\Tasken.Gerenciador.Eventos.FrmPalestranteCRUD.resources
 C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.View\obj\Debug\Tasken.Gerenciador.Eventos.FrmRedeSocialCRUD.resources
 C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.View\obj\Debug\Tasken.Gerenciador.Eventos.Properties.Resources.resources
