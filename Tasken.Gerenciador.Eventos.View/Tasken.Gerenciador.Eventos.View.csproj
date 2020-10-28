@@ -47,6 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\EnumControleLoteNome.cs" />
+    <Compile Include="EventoFrm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventoFrm.Designer.cs">
+      <DependentUpon>EventoFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enums\EnumAcaoCrud.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -71,6 +78,12 @@
     </Compile>
     <Compile Include="FrmInformacoesEvento.Designer.cs">
       <DependentUpon>FrmInformacoesEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLote.cs">
       <SubType>Form</SubType>
@@ -102,8 +115,23 @@
     <Compile Include="FrmRedeSocialCRUD.Designer.cs">
       <DependentUpon>FrmRedeSocialCRUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoteFrm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoteFrm.Designer.cs">
+      <DependentUpon>LoteFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PalestranteFrm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PalestranteFrm.Designer.cs">
+      <DependentUpon>PalestranteFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EventoFrm.resx">
+      <DependentUpon>EventoFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInformacoesEvento.resx">
       <DependentUpon>FrmInformacoesEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLote.resx">
       <DependentUpon>FrmLote.cs</DependentUpon>
@@ -130,6 +161,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRedeSocialCRUD.resx">
       <DependentUpon>FrmRedeSocialCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoteFrm.resx">
+      <DependentUpon>LoteFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PalestranteFrm.resx">
+      <DependentUpon>PalestranteFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

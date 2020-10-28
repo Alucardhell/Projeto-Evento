@@ -36,15 +36,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPreco = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxDataInicio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxDataFim = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxQuantidade = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimeFim = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeInicio = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,13 +114,6 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Data Inicio:";
             // 
-            // textBoxDataInicio
-            // 
-            this.textBoxDataInicio.Location = new System.Drawing.Point(79, 146);
-            this.textBoxDataInicio.Name = "textBoxDataInicio";
-            this.textBoxDataInicio.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDataInicio.TabIndex = 8;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -129,13 +122,6 @@
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Data Fim:";
-            // 
-            // textBoxDataFim
-            // 
-            this.textBoxDataFim.Location = new System.Drawing.Point(72, 182);
-            this.textBoxDataFim.Name = "textBoxDataFim";
-            this.textBoxDataFim.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDataFim.TabIndex = 10;
             // 
             // label6
             // 
@@ -184,14 +170,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimeFim);
+            this.groupBox1.Controls.Add(this.dateTimeInicio);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.textBoxQuantidade);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBoxDataFim);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBoxDataInicio);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBoxPreco);
             this.groupBox1.Controls.Add(this.label3);
@@ -206,6 +192,22 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Formulário";
+            // 
+            // dateTimeFim
+            // 
+            this.dateTimeFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeFim.Location = new System.Drawing.Point(70, 179);
+            this.dateTimeFim.Name = "dateTimeFim";
+            this.dateTimeFim.Size = new System.Drawing.Size(82, 20);
+            this.dateTimeFim.TabIndex = 17;
+            // 
+            // dateTimeInicio
+            // 
+            this.dateTimeInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeInicio.Location = new System.Drawing.Point(79, 143);
+            this.dateTimeInicio.Name = "dateTimeInicio";
+            this.dateTimeInicio.Size = new System.Drawing.Size(82, 20);
+            this.dateTimeInicio.TabIndex = 16;
             // 
             // FrmLoteCRUD
             // 
@@ -233,14 +235,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxPreco;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxDataInicio;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxDataFim;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxQuantidade;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dateTimeFim;
+        private System.Windows.Forms.DateTimePicker dateTimeInicio;
     }
 }

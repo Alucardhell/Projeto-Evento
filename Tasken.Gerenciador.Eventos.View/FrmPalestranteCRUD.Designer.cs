@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBoxUrl = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnConfirma = new System.Windows.Forms.Button();
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxTelefone = new System.Windows.Forms.TextBox();
@@ -81,17 +81,17 @@
             this.button3.TabIndex = 33;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // button2
+            // btnConfirma
             // 
-            this.button2.Location = new System.Drawing.Point(9, 281);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 53);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "Confirma";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnConfirma.Location = new System.Drawing.Point(9, 281);
+            this.btnConfirma.Name = "btnConfirma";
+            this.btnConfirma.Size = new System.Drawing.Size(108, 53);
+            this.btnConfirma.TabIndex = 32;
+            this.btnConfirma.Text = "Confirma";
+            this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // textBoxId
             // 
@@ -173,7 +173,6 @@
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 19;
             this.label2.Text = "ImagemUrl:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -222,8 +221,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(449, 191);
             this.dataGridView1.TabIndex = 35;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewRedeSocial_MouseClick);
             // 
             // RedeSocialId
             // 
@@ -253,7 +251,7 @@
             this.Deletar});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(112, 70);
-            this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
+            this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuRedeSocial_ItemClicked);
             // 
             // Incluir
             // 
@@ -279,7 +277,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnConfirma);
             this.groupBox1.Controls.Add(this.textBoxId);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.textBoxMinicurriculo);
@@ -306,7 +304,6 @@
             this.textBoxMinicurriculo.Name = "textBoxMinicurriculo";
             this.textBoxMinicurriculo.Size = new System.Drawing.Size(190, 59);
             this.textBoxMinicurriculo.TabIndex = 26;
-            this.textBoxMinicurriculo.TextChanged += new System.EventHandler(this.textBoxQtd_TextChanged);
             // 
             // groupBox2
             // 
@@ -329,7 +326,6 @@
             this.Name = "FrmPalestranteCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPalestranteCRUD";
-            this.Activated += new System.EventHandler(this.FrmPalestranteCRUD_Activated);
             this.Load += new System.EventHandler(this.FrmPalestranteCRUD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUrl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -345,7 +341,7 @@
 
         private System.Windows.Forms.PictureBox pictureBoxUrl;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnConfirma;
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxTelefone;

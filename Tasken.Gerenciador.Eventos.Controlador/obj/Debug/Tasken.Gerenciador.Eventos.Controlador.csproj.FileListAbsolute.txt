@@ -1,9 +1,9 @@
 C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Controlador\bin\Debug\Tasken.Gerenciador.Eventos.Controlador.dll
 C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Controlador\bin\Debug\Tasken.Gerenciador.Eventos.Controlador.pdb
-C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Controlador\obj\Debug\Tasken.Gerenciador.Eventos.Controlador.csprojAssemblyReference.cache
-C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Controlador\obj\Debug\Tasken.Gerenciador.Eventos.Controlador.csproj.CoreCompileInputs.cache
-C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Controlador\obj\Debug\Tasken.Gerenciador.Eventos.Controlador.dll
-C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Controlador\obj\Debug\Tasken.Gerenciador.Eventos.Controlador.pdb
 C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Controlador\bin\Debug\Tasken.Gerenciador.Eventos.Modelos.dll
 C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Controlador\bin\Debug\Tasken.Gerenciador.Eventos.Modelos.pdb
+C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Controlador\obj\Debug\Tasken.Gerenciador.Eventos.Controlador.csprojAssemblyReference.cache
+C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Controlador\obj\Debug\Tasken.Gerenciador.Eventos.Controlador.csproj.CoreCompileInputs.cache
 C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Controlador\obj\Debug\Tasken.Gerenciador.Eventos.Controlador.csproj.CopyComplete
+C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Controlador\obj\Debug\Tasken.Gerenciador.Eventos.Controlador.dll
+C:\Users\doliveira\source\repos\Tasken.Gerenciador.Eventos\Tasken.Gerenciador.Eventos.Controlador\obj\Debug\Tasken.Gerenciador.Eventos.Controlador.pdb

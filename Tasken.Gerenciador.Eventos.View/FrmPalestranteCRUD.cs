@@ -61,17 +61,7 @@ namespace Tasken.Gerenciador.Eventos
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxQtd_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void btnConfirma_Click(object sender, EventArgs e)
         {
             FabricaRepositorio fabricarEvento = new FabricaRepositorio(ConnectionSQL.connectionString);
 
@@ -98,6 +88,14 @@ namespace Tasken.Gerenciador.Eventos
                         Console.WriteLine(palestranteCadastro.ToString());
                         fabricarEvento.RepositorioPalestrante.Inserir(palestranteCadastro);
                         MessageBox.Show("Cadastrado com sucesso.");
+
+                        textBoxNome.Enabled = false;
+                        textBoxEmail.Enabled = false;
+                        textBoxMinicurriculo.Enabled = false;
+                        textBoxTelefone.Enabled = false;
+                        textBoxUrl.Enabled = false;
+                        dataGridView1.Enabled = true;
+                        btnConfirma.Enabled = false;
                     }
                     catch (Exception ex)
                     {
@@ -130,16 +128,12 @@ namespace Tasken.Gerenciador.Eventos
             }
         }
 
-        private void FrmPalestranteCRUD_Activated(object sender, EventArgs e)
-        {
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        private void dataGridViewRedeSocial_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
                 contextMenuStrip1.Show(dataGridView1, new Point(e.X, e.Y));
@@ -147,7 +141,7 @@ namespace Tasken.Gerenciador.Eventos
         }
 
 
-        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void MenuRedeSocial_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             EnumAcaoCrud acaoMenu;
 
@@ -159,9 +153,13 @@ namespace Tasken.Gerenciador.Eventos
             switch (acaoMenu)
             {
                 case EnumAcaoCrud.Incluir:
+
+                    FabricaRepositorio fabricarEvento = new FabricaRepositorio(ConnectionSQL.connectionString);
+                    _palestrante = fabricarEvento.RepositorioPalestrante.ConsultarPorNome(textBoxNome.Text);
                     FrmRedeSocialCRUD frmAdicionar = new FrmRedeSocialCRUD(_redeSocial, _palestrante, EnumAcaoCrud.Incluir);
                     frmAdicionar.ShowDialog();
                     BuscarTodosRedeSocial();
+
                     break;
                 case EnumAcaoCrud.Alterar:
                     if (_redeSocial.RedeSocialId != 0)
@@ -190,11 +188,6 @@ namespace Tasken.Gerenciador.Eventos
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void FrmPalestranteCRUD_Load(object sender, EventArgs e)
         {
 
@@ -205,6 +198,7 @@ namespace Tasken.Gerenciador.Eventos
             textBoxMinicurriculo.Text = _palestrante.Minicurriculo;
             textBoxEmail.Text = _palestrante.Email;
             textBoxTelefone.Text = _palestrante.Telefone;
+            
             try
             {
                 pictureBoxUrl.LoadAsync(_palestrante.ImagemUrl);
@@ -218,12 +212,12 @@ namespace Tasken.Gerenciador.Eventos
             switch (_acao)
             {
                 case EnumAcaoCrud.Alterar:
-                    Console.WriteLine("ALTERAR");
-                    this.Text = "ALTERAR";
+                    this.Text = "ALTERAR PALESTRANTE";
                     BuscarTodosRedeSocial();
                     break;
                 case EnumAcaoCrud.Incluir:
-                    this.Text = "CADASTRAR";
+                    this.Text = "CADASTRAR PALESTRANTE";
+                    dataGridView1.Enabled = false;
                     textBoxId.Text = "";
                     textBoxNome.Text = "";
                     textBoxUrl.Text = "";
@@ -240,14 +234,10 @@ namespace Tasken.Gerenciador.Eventos
                     textBoxMinicurriculo.Enabled = false;
                     textBoxEmail.Enabled = false;
                     textBoxTelefone.Enabled = false;
-                    this.Text = "DELETAR";
+                    dataGridView1.Enabled = false;
+                    this.Text = "DELETAR PALESTRANTE";
                     break;
             }
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)

@@ -9,7 +9,7 @@ namespace Tasken.Gerenciador.Eventos.Controlador.Utils
 {
     public static class ConnectionSQL
     {
-        public static readonly string connectionString = ConfigurationManager.ConnectionStrings["ConexaoBancoTeste"].ToString();
+        public static string connectionString = ConfigurationManager.ConnectionStrings["ConexaoBancoTeste"]?.ToString() ?? string.Empty;
 
     }
 }

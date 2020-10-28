@@ -1,75 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
 using Tasken.Gerenciador.Eventos.Controlador.Repositorios;
-using Tasken.Gerenciador.Eventos.Modelos.Modelos;
 using Tasken.Gerenciador.Eventos.Controlador.Utils;
+using Tasken.Gerenciador.Eventos.Modelos.Modelos;
 
 namespace Tasken.Gerenciador.Eventos
 {
-    public partial class HomeFrm : Form
+    public partial class EventoFrm : UserControl
     {
-
         private Evento eventoFrm = new Evento();
-        public HomeFrm()
+        public EventoFrm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Console.WriteLine("Botão funcionando");
-
-            FabricaRepositorio fr = new FabricaRepositorio(ConnectionSQL.connectionString);
-            Evento ev = new Evento();
-            fr.RepositorioEvento.Inserir(ev);
-
-        }
-
-        private void _dataEvento_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEvento_Click(object sender, EventArgs e)
-        {
-            palestranteFrm1.Hide();
-            crudEvento1.Show();
-            crudEvento1.BringToFront();
-            this.Text = "Evento";
-        }
-
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            FrmPalestrante formPalestrante = new FrmPalestrante();
-            formPalestrante.ShowDialog();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FrmLote formLote = new FrmLote();
-            formLote.ShowDialog();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void BuscarTodos()
         {
             FabricaRepositorio fabricarEvento = new FabricaRepositorio(ConnectionSQL.connectionString);
-            List<Evento> eventos = fabricarEvento.RepositorioEvento.ConsultarEntreDatas(dateTimePickerInicio.Value.ToString("dd/MM/yyyy"), dateTimePickerFim.Value.ToString("dd/MM/yyyy"));
-
-            if (eventos.Count != 0)
-            {
+            List<Evento> eventos = fabricarEvento.RepositorioEvento.ConsultarTodos();
 
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
@@ -86,17 +41,34 @@ namespace Tasken.Gerenciador.Eventos
                 dataGridView1.Rows[i].Cells[5].Value = eventos[i].ImagemUrl;
                 dataGridView1.Rows[i].Cells[6].Value = eventos[i].Telefone;
             }
+        }
+
+        private void btnCadastrarEvento_Click(object sender, EventArgs e)
+        {
+            FrmEventoCRUD alt = new FrmEventoCRUD(eventoFrm, Enums.EnumAcaoCrud.Incluir);
+            alt.ShowDialog();
+            BuscarTodos();
+        }
+
+        private void CrudEvento_Load(object sender, EventArgs e)
+        {
+            BuscarTodos();
+        }
+
+        private void btnAlterarEvento_Click(object sender, EventArgs e)
+        {
+            if (eventoFrm.EventoID != 0)
+            {
+                FrmEventoCRUD alt = new FrmEventoCRUD(eventoFrm, Enums.EnumAcaoCrud.Alterar);
+                alt.ShowDialog();
+                BuscarTodos();
             }
             else
             {
-                MessageBox.Show("Nenhum Evento encontrado.");
+                MessageBox.Show("AVISO !!! Selecione uma linha valida !!!");
             }
 
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine(dateTimePickerInicio.Value.ToString("dd/MM/yyyy"));
+            eventoFrm = new Evento();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -133,50 +105,47 @@ namespace Tasken.Gerenciador.Eventos
             }
         }
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        private void btnExcluirEvento_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(eventoFrm.ToString());
-            FrmInformacoesEvento formInformacao = new FrmInformacoesEvento(eventoFrm);
-            formInformacao.ShowDialog();
+            if (eventoFrm.EventoID != 0)
+            {
+                FrmEventoCRUD alt = new FrmEventoCRUD(eventoFrm, Enums.EnumAcaoCrud.Deletar);
+                alt.ShowDialog();
+                BuscarTodos();
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma Linha Valida.");
+            }
+            eventoFrm = new Evento();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnEventoPesquisarTodos(object sender, EventArgs e)
         {
-            palestranteFrm1.Hide();
-            loteFrm1.Hide();
-            crudEvento1.Hide();
+            BuscarTodos();
         }
 
-        private void btnPrincipal_Click(object sender, EventArgs e)
+        private void btnEventoPesquisarId(object sender, EventArgs e)
         {
-            crudEvento1.Hide();
-            palestranteFrm1.Hide();
-            loteFrm1.Hide();
-            this.Text = "Home";
-        }
-
-        private void crudEvento1_Load(object sender, EventArgs e)
-        {
-            crudEvento1.Hide();
-            palestranteFrm1.Hide();
-        }
-
-        private void btnPalestrante_Click(object sender, EventArgs e)
-        {
-            crudEvento1.Hide();
-            loteFrm1.Hide();
-            palestranteFrm1.Show();
-            palestranteFrm1.BringToFront();
-            this.Text = "Palestrante";
-        }
-
-        private void btnLote_Click(object sender, EventArgs e)
-        {
-            crudEvento1.Hide();
-            palestranteFrm1.Hide();
-            loteFrm1.Show();
-            loteFrm1.BringToFront();
-            this.Text = "Lote";
+            try
+            {
+                FabricaRepositorio fabricarEvento = new FabricaRepositorio(ConnectionSQL.connectionString);
+                Evento eventoId = fabricarEvento.RepositorioEvento.ConsultarPorId(int.Parse(textBoxPesquisarId.Text));
+                dataGridView1.Rows.Clear();
+                dataGridView1.Refresh();
+                dataGridView1.Rows[0].Cells[0].Value = eventoId.EventoID;
+                dataGridView1.Rows[0].Cells[1].Value = eventoId.Local;
+                dataGridView1.Rows[0].Cells[2].Value = eventoId.DataEvento;
+                dataGridView1.Rows[0].Cells[3].Value = eventoId.Tema;
+                dataGridView1.Rows[0].Cells[4].Value = eventoId.Qtd;
+                dataGridView1.Rows[0].Cells[5].Value = eventoId.ImagemUrl;
+                dataGridView1.Rows[0].Cells[6].Value = eventoId.Telefone;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Informe um numero valido !!!", "Aviso !!!");
+            }
         }
     }
 }

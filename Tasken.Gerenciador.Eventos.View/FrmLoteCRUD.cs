@@ -18,7 +18,9 @@ namespace Tasken.Gerenciador.Eventos
     {
 
         private EnumAcaoCrud _acao;
+        private EnumControleLoteNome _controleCadastro;
         private Lote _lote = new Lote();
+        private int _caminhoCadastro {get; set;}
         public FrmLoteCRUD()
         {
             InitializeComponent();
@@ -31,9 +33,17 @@ namespace Tasken.Gerenciador.Eventos
             InitializeComponent();
         }
 
+        public FrmLoteCRUD(Lote lote, EnumAcaoCrud acao, EnumControleLoteNome controleCadastro)
+        {
+            this._lote = lote;
+            this._acao = acao;
+            this._controleCadastro = controleCadastro;
+            InitializeComponent();
+        }
+
         public Lote CriarLote()
         {
-            Lote novoLote = new Lote(comboBoxNomeEvento.Text, int.Parse(textBoxId.Text) , textBoxNome.Text, double.Parse(textBoxPreco.Text), DateTime.Parse(textBoxDataInicio.Text), DateTime.Parse(textBoxDataFim.Text), int.Parse(textBoxQuantidade.Text));
+            Lote novoLote = new Lote(comboBoxNomeEvento.Text, int.Parse(textBoxId.Text) , textBoxNome.Text, double.Parse(textBoxPreco.Text), DateTime.Parse(dateTimeInicio.Value.ToString("dd/MM/yyyy")), DateTime.Parse(dateTimeFim.Value.ToString("dd/MM/yyyy")), int.Parse(textBoxQuantidade.Text));
             return novoLote;
         }
 
@@ -50,26 +60,27 @@ namespace Tasken.Gerenciador.Eventos
             textBoxId.Text = _lote.Loteid.ToString();
             textBoxNome.Text = _lote.Nome;
             textBoxPreco.Text = _lote.Preco.ToString();
-            textBoxDataInicio.Text = _lote.DataInicio.ToString("dd/MM/yyyy");
-            textBoxDataFim.Text = _lote.DataFim.ToString("dd/MM/yyyy");
             textBoxQuantidade.Text = _lote.Quantidade.ToString();
+
+            if (_controleCadastro.ToString().Equals("Desabilitar"))
+                this.comboBoxNomeEvento.Enabled = false;
+
 
             switch (_acao)
             {
                 case EnumAcaoCrud.Alterar:
                     Console.WriteLine("ALTERAR");
-                    this.Text = "ALTERAR";
+                    this.Text = "ALTERAR LOTE";
                     comboBoxNomeEvento.Text = _lote.NomeEvento;
                     this.textBoxId.Enabled = false;
                     break;
                 case EnumAcaoCrud.Incluir:
-                    this.Text = "CADASTRAR";
+                    this.Text = "CADASTRAR LOTE";
                     textBoxId.Text = "0";
                     textBoxNome.Text = "";
                     textBoxPreco.Text = "";
-                    textBoxDataInicio.Text = "";
-                    textBoxDataFim.Text = "";
                     textBoxQuantidade.Text = "";
+                    comboBoxNomeEvento.Text = _lote.NomeEvento;
                     labelLoteId.Visible = false;
                     textBoxId.Visible = false;
 
@@ -78,12 +89,12 @@ namespace Tasken.Gerenciador.Eventos
                     textBoxId.Enabled = false;
                     textBoxNome.Enabled = false;
                     textBoxPreco.Enabled = false;
-                    textBoxDataInicio.Enabled = false;
-                    textBoxDataFim.Enabled = false;
+                    dateTimeInicio.Enabled = false;
+                    dateTimeFim.Enabled = false;
                     textBoxQuantidade.Enabled = false;
                     comboBoxNomeEvento.Enabled = false;
                     comboBoxNomeEvento.Text = _lote.NomeEvento;
-                    this.Text = "DELETAR";
+                    this.Text = "DELETAR LOTE";
                     break;
             }
         }
@@ -95,7 +106,6 @@ namespace Tasken.Gerenciador.Eventos
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // MessageBox.Show(comboBoxNomeEvento.Text);
 
             FabricaRepositorio fabricarEvento = new FabricaRepositorio(ConnectionSQL.connectionString);
 

@@ -71,6 +71,25 @@ namespace Tasken.Gerenciador.Eventos.Controlador.Repositorios
             return listaConsulta;
         }
 
+        public Palestrante ConsultarPorNome(string nome)
+        {
+            string _query = $"SELECT * FROM Palestrante WHERE Nome = '{nome}'";
+            SqlDataReader dr = ExecutarComandoReader(new SqlCommand(_query));
+            Palestrante buscaPalestrante = new Palestrante();
+
+            while (dr.Read())
+            {
+                buscaPalestrante.PalestranteId = dr.GetInt32(0);
+                buscaPalestrante.Nome = dr.GetString(1);
+                buscaPalestrante.ImagemUrl = dr.GetString(2); ;
+                buscaPalestrante.Telefone = dr.GetString(3);
+                buscaPalestrante.Minicurriculo = dr.GetString(4);
+                buscaPalestrante.Email = dr.GetString(5);
+
+            }
+            return buscaPalestrante;
+        }
+
         public void Excluir(int id)
         {
             string _query = $"DELETE FROM Palestrante WHERE PalestranteID = {id}";

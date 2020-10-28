@@ -36,7 +36,7 @@ namespace Tasken.Gerenciador.Eventos
 
         public Evento criarEvento()
         {
-            Evento novoEvento = new Evento(textBoxLocal.Text, DateTime.Parse(textBoxData.Text), textBoxTema.Text, int.Parse(textBoxQtd.Text), textBoxUrl.Text, textBoxTelefone.Text);
+            Evento novoEvento = new Evento(textBoxLocal.Text, DateTime.Parse(dateTimeValor.Value.ToString("dd/MM/yyyy")), textBoxTema.Text, int.Parse(textBoxQtd.Text), textBoxUrl.Text, textBoxTelefone.Text);
             return novoEvento;
         }
 
@@ -84,10 +84,6 @@ namespace Tasken.Gerenciador.Eventos
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -119,12 +115,12 @@ namespace Tasken.Gerenciador.Eventos
                     try
                     {
                         Evento eventoCadastro = criarEvento();
-                        fabricarEvento.RepositorioEvento.Inserir(eventoCadastro);                       
+                        fabricarEvento.RepositorioEvento.Inserir(eventoCadastro);
                         Console.WriteLine(_evento.ToString());
                         MessageBox.Show("Cadastrado com sucesso.");
 
                         textBoxLocal.Enabled = false;
-                        textBoxData.Enabled = false;
+                        dateTimeValor.Enabled = false;
                         textBoxTema.Enabled = false;
                         textBoxQtd.Enabled = false;
                         textBoxUrl.Enabled = false;
@@ -206,10 +202,6 @@ namespace Tasken.Gerenciador.Eventos
             }
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -217,7 +209,7 @@ namespace Tasken.Gerenciador.Eventos
             if (e.Button == MouseButtons.Right)
                 contextMenuStrip1.Show(dataGridView1, new Point(e.X, e.Y));
 
-          
+
         }
 
         private void Menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -242,11 +234,11 @@ namespace Tasken.Gerenciador.Eventos
                 case EnumAcaoCrud.Alterar:
                     if (_redeSocial.EventoId != 0)
                     {
-                         FrmRedeSocialCRUD frmEditar = new FrmRedeSocialCRUD(_redeSocial, _evento, EnumAcaoCrud.Alterar);
-                         frmEditar.ShowDialog();
+                        FrmRedeSocialCRUD frmEditar = new FrmRedeSocialCRUD(_redeSocial, _evento, EnumAcaoCrud.Alterar);
+                        frmEditar.ShowDialog();
                         RedeSocial reseteRede = new RedeSocial();
                         _redeSocial = reseteRede;
-                         BuscarTodosRedeSocial();
+                        BuscarTodosRedeSocial();
                     }
                     else
                     {
@@ -271,7 +263,7 @@ namespace Tasken.Gerenciador.Eventos
 
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void btnCancelar_Click_(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -285,11 +277,12 @@ namespace Tasken.Gerenciador.Eventos
         {
             textBoxId.Text = _evento.EventoID.ToString();
             textBoxLocal.Text = _evento.Local;
-            textBoxData.Text = _evento.DataEvento.ToString("dd/MM/yyyy");
             textBoxTema.Text = _evento.Tema;
             textBoxQtd.Text = _evento.Qtd.ToString();
             textBoxUrl.Text = _evento.ImagemUrl;
             textBoxTelefone.Text = _evento.Telefone;
+            groupBox4.Visible = false;
+            groupBox3.Visible = false;
             try
             {
 
@@ -306,14 +299,12 @@ namespace Tasken.Gerenciador.Eventos
                 case EnumAcaoCrud.Alterar:
                     BuscarTodosRedeSocial();
                     BuscaTodosLote();
-                    Console.WriteLine("ALTERAR");
-                    this.Text = "ALTERAR";
+                    this.Text = "ALTERAR EVENTO";
                     break;
                 case EnumAcaoCrud.Incluir:
-                    this.Text = "CADASTRAR";
+                    this.Text = "CADASTRAR EVENTO";
                     textBoxId.Text = "";
                     textBoxLocal.Text = "";
-                    textBoxData.Text = "";
                     textBoxTema.Text = "";
                     textBoxQtd.Text = "";
                     textBoxUrl.Text = "";
@@ -328,12 +319,14 @@ namespace Tasken.Gerenciador.Eventos
                     BuscarTodosRedeSocial();
                     BuscaTodosLote();
                     textBoxLocal.Enabled = false;
-                    textBoxData.Enabled = false;
+                    dateTimeValor.Enabled = false;
                     textBoxTema.Enabled = false;
                     textBoxQtd.Enabled = false;
                     textBoxUrl.Enabled = false;
                     textBoxTelefone.Enabled = false;
-                    this.Text = "DELETAR";
+                    dataGridView1.Enabled = false;
+                    dataGridView2.Enabled = false;
+                    this.Text = "DELETAR EVENTO";
                     break;
             }
         }
@@ -357,7 +350,7 @@ namespace Tasken.Gerenciador.Eventos
             {
                 case EnumAcaoCrud.Incluir:
                     _lote.NomeEvento = textBoxTema.Text;
-                    FrmLoteCRUD frmAdicionar = new FrmLoteCRUD(_lote, EnumAcaoCrud.Incluir);
+                    FrmLoteCRUD frmAdicionar = new FrmLoteCRUD(_lote, EnumAcaoCrud.Incluir, EnumControleLoteNome.Desabilitar);
                     frmAdicionar.ShowDialog();
                     _evento.Tema = textBoxTema.Text;
                     BuscaTodosLote();
@@ -366,8 +359,8 @@ namespace Tasken.Gerenciador.Eventos
                     if (_lote.Loteid != 0)
                     {
 
-                    FrmLoteCRUD frmEditar = new FrmLoteCRUD(_lote, EnumAcaoCrud.Alterar);
-                    frmEditar.ShowDialog();
+                        FrmLoteCRUD frmEditar = new FrmLoteCRUD(_lote, EnumAcaoCrud.Alterar);
+                        frmEditar.ShowDialog();
                         _evento.Tema = textBoxTema.Text;
                         BuscaTodosLote();
                     }
@@ -380,8 +373,8 @@ namespace Tasken.Gerenciador.Eventos
                     if (_lote.Loteid != 0)
                     {
 
-                    FrmLoteCRUD frmExcluir = new FrmLoteCRUD(_lote, EnumAcaoCrud.Deletar);
-                    frmExcluir.ShowDialog();
+                        FrmLoteCRUD frmExcluir = new FrmLoteCRUD(_lote, EnumAcaoCrud.Deletar);
+                        frmExcluir.ShowDialog();
                         _evento.Tema = textBoxTema.Text;
                         BuscaTodosLote();
                     }
@@ -425,6 +418,54 @@ namespace Tasken.Gerenciador.Eventos
                     MessageBox.Show("Selecione uma Linha valida !!!");
                 }
             }
+        }
+
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                try
+                {
+
+                    int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                    string gridRedeSocialId = Convert.ToString(selectedRow.Cells[0].Value);
+                    string gridNome = Convert.ToString(selectedRow.Cells[1].Value);
+                    string gridUrl = Convert.ToString(selectedRow.Cells[2].Value);
+                    string gridEventoId = Convert.ToString(selectedRow.Cells[3].Value);
+
+                    _redeSocial.RedeSocialId = int.Parse(gridRedeSocialId);
+                    _redeSocial.Nome = gridNome;
+                    _redeSocial.Url = gridUrl;
+                    _redeSocial.EventoId = int.Parse(gridEventoId.ToString());
+                    Console.WriteLine(_redeSocial.ToString());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show("Selecione uma Linha valida !!!");
+                }
+            }
+        }
+
+        private void dataGridView1_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            {
+                if (e.Button == MouseButtons.Right)
+                    contextMenuStrip1.Show(dataGridView1, new Point(e.X, e.Y));
+            }
+        }
+
+        private void buttonLote_Click(object sender, EventArgs e)
+        {
+            groupBox4.Visible = true;
+            groupBox3.Visible = false;
+        }
+
+        private void buttonRedeSocial_Click(object sender, EventArgs e)
+        {
+            groupBox3.Visible = true;
+            groupBox4.Visible = false;
         }
     }
 }
