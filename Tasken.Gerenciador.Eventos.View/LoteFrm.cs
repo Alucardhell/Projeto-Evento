@@ -162,5 +162,10 @@ namespace Tasken.Gerenciador.Eventos
                 }
             }
         }
+
+        private void LoteFrm_Load(object sender, EventArgs e)
+        {
+            BuscarTodos();
+        }
     }
 }

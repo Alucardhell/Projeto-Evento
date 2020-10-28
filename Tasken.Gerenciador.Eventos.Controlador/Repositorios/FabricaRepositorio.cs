@@ -30,5 +30,9 @@ namespace Tasken.Gerenciador.Eventos.Controlador.Repositorios
         private RepositorioLote _repositorioLote;
 
         public RepositorioLote RepositorioLote { get { return _repositorioLote ?? (_repositorioLote = new RepositorioLote(_connectionString)); } }
+
+        private RepositorioLogin _repositorioLogin;
+
+        public RepositorioLogin RepositorioLogin { get { return _repositorioLogin ?? (_repositorioLogin = new RepositorioLogin(_connectionString)); } }
     }
 }

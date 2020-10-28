@@ -1,32 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tasken.Gerenciador.Eventos.Controlador.Repositorios;
-using Tasken.Gerenciador.Eventos.Controlador.Utils;
-using Tasken.Gerenciador.Eventos.Modelos.Modelos;
+using System.Threading.Tasks;
 
-
-namespace Tasken.Gerenciador.Eventos.Testes
+namespace Tasken.Gerenciador.Eventos.Controlador.Utils
 {
-    [TestClass]
-    public class UnitTestRepositorios
+    public static class Utilidades
     {
-
-
-        [TestMethod]
-
-        public void testeSenha()
-        {
-            Console.WriteLine(GerarHashMd5("123"));
-        }
-
-
-
-        [TestMethod]
-        public static string GerarHashMd5(string input)
+        public static string GerarSenha(string input)
         {
             MD5 md5Hash = MD5.Create();
             // Converter a String para array de bytes, que é como a biblioteca trabalha.

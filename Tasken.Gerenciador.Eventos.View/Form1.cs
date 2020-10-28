@@ -23,6 +23,28 @@ namespace Tasken.Gerenciador.Eventos
             InitializeComponent();
         }
 
+        private void BuscarTodos()
+        {
+            FabricaRepositorio fabricarEvento = new FabricaRepositorio(ConnectionSQL.connectionString);
+            List<Evento> eventos = fabricarEvento.RepositorioEvento.ConsultarTodos();
+
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+
+
+            for (int i = 0; i < eventos.Count; i++)
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[i].Cells[0].Value = eventos[i].EventoID;
+                dataGridView1.Rows[i].Cells[1].Value = eventos[i].Local;
+                dataGridView1.Rows[i].Cells[2].Value = eventos[i].DataEvento;
+                dataGridView1.Rows[i].Cells[3].Value = eventos[i].Tema;
+                dataGridView1.Rows[i].Cells[4].Value = eventos[i].Qtd;
+                dataGridView1.Rows[i].Cells[5].Value = eventos[i].ImagemUrl;
+                dataGridView1.Rows[i].Cells[6].Value = eventos[i].Telefone;
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -130,9 +152,13 @@ namespace Tasken.Gerenciador.Eventos
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            FrmLogin loginfrm = new FrmLogin();
+            loginfrm.ShowDialog();
             palestranteFrm1.Hide();
             loteFrm1.Hide();
             crudEvento1.Hide();
+            BuscarTodos();
+
         }
 
         private void btnPrincipal_Click(object sender, EventArgs e)

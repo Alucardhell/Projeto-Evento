@@ -51,6 +51,37 @@ namespace Tasken.Gerenciador.Eventos.Controlador.Repositorios
             }
         }
 
+
+        protected int ExecutarComandoExecuteScalar(SqlCommand cmd)
+        {
+            try
+            {
+                cmd.Connection = AbrirConexao();
+                var retornoSQL = cmd.ExecuteScalar();
+                int resultado;
+                if (retornoSQL == null)
+                {
+                    resultado = 0;
+                }
+                else
+                {
+                    resultado = 1;
+                }
+
+                return resultado;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao executar um comando {ex.Message}.", "Erro.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+            finally
+            {
+                FecharConexao();
+            }
+        }
+
         protected SqlDataReader ExecutarComandoReader(SqlCommand cmd)
         {
             try

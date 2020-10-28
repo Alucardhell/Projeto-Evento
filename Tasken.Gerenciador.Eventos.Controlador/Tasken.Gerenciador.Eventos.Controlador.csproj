@@ -47,10 +47,12 @@
     <Compile Include="Repositorios\FabricaRepositorio.cs" />
     <Compile Include="Repositorios\RepositorioBase.cs" />
     <Compile Include="Repositorios\RepositorioEvento.cs" />
+    <Compile Include="Repositorios\RepositorioLogin.cs" />
     <Compile Include="Repositorios\RepositorioLote.cs" />
     <Compile Include="Repositorios\RepositorioPalestrante.cs" />
     <Compile Include="Repositorios\RepositorioRedeSocial.cs" />
     <Compile Include="Utils\ConnectionSQL.cs" />
+    <Compile Include="Utils\Utilidades.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tasken.Gerenciador.Eventos.Modelos\Tasken.Gerenciador.Eventos.Modelos.csproj">

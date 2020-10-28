@@ -144,5 +144,10 @@ namespace Tasken.Gerenciador.Eventos
                 }
             }
         }
+
+        private void PalestranteFrm_Load(object sender, EventArgs e)
+        {
+            BuscarTodos();
+        }
     }
 }
